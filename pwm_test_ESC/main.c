@@ -1,5 +1,23 @@
+/*
+PWM with comments.
+Most of ESCs have nominal refesh rate in range of: 50Hz to 400Hz. It means that the PWM frequency should be
+about 200Hz
+*/
 #include "main.h"
-#define PWM_period 20000 //micro seconds
+#define PWM_period 500 //micro seconds
+void delay_us(uint32_t period){
+
+  	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
+  	TIM2->PSC = 83;		// clk = SystemCoreClock /2/(PSC+1) = 1MHz
+  	TIM2->ARR = period-1;
+  	TIM2->CNT = 0;
+  	TIM2->EGR = 1;		// update registers;
+  	TIM2->SR  = 0;		// clear overflow flag
+  	TIM2->CR1 = 1;		// enable Timer6
+  	while (!TIM2->SR);
+  	TIM2->CR2 = 0;		// stop Timer6
+  	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, DISABLE);
+}
 //delay 0.1ms
 void delay_01ms(uint16_t period){
 	
@@ -17,37 +35,36 @@ void delay_01ms(uint16_t period){
 TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;
 TIM_OCInitTypeDef  TIM_OCInitStructure;
 GPIO_InitTypeDef GPIO_InitStructure;
-uint16_t S = 1000;
+uint16_t S=1000;
 int main(void)
 {
-    GPIO_InitTypeDef  GPIO_InitStructure;
-    RCC->AHB1ENR |= RCC_AHB1Periph_GPIOD;
-    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_12|GPIO_Pin_13|GPIO_Pin_14|GPIO_Pin_15 ;
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
-    GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
-    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
-    GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
-    GPIO_Init(GPIOD, &GPIO_InitStructure);
-	  PWM_Config();
-    //"on the fly" update CCR registers. -> use for quadcopter
-    //This is sent to initialize the motors
-    printf("Hello this is the start of trace\r\n");
-    TIM1->CCR1 = 1000;
-    TIM1->CCR2 = 1000;
-    TIM1->CCR3 = 1000;
-    TIM1->CCR4 = 1000;
-    delay_01ms(50000);
-    while(1) {
-        if (S<1700) {
-		    S+=50;
-		    delay_01ms(50000);
-		    printf("Hello this is tracing %d\r\n",S);
-		    GPIO_ToggleBits(GPIOD,GPIO_Pin_12|GPIO_Pin_13|GPIO_Pin_14|GPIO_Pin_15);
-	    }
-	    TIM1->CCR1 = S;
-	    TIM1->CCR2 = S;
-	    TIM1->CCR3 = S;
-        TIM1->CCR4 = S;
+	GPIO_InitTypeDef  GPIO_InitStructure;
+  RCC->AHB1ENR |= RCC_AHB1Periph_GPIOD;
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_12|GPIO_Pin_13|GPIO_Pin_14|GPIO_Pin_15 ;
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
+  GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
+  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
+  GPIO_Init(GPIOD, &GPIO_InitStructure);
+	PWM_Config();
+	//This is sent to initialize the motors
+	TIM1->CCR1 = S;
+	TIM1->CCR2 = S;
+	TIM1->CCR3 = S;
+  TIM1->CCR4 = S;
+	delay_01ms(50000);
+	while(1)  
+  {
+		if (S<1700)
+		{
+		S+=50;
+		delay_01ms(50000);
+		GPIO_ToggleBits(GPIOD,GPIO_Pin_12|GPIO_Pin_13|GPIO_Pin_14|GPIO_Pin_15);
+		}
+	TIM1->CCR1 = S;
+	TIM1->CCR2 = S;
+	TIM1->CCR3 = S;
+  TIM1->CCR4 = S;
 	}
 }
 
@@ -81,6 +98,7 @@ int main(void)
     TIM_OCInitStructure.TIM_OutputNState = TIM_OutputNState_Enable;
     TIM_OCInitStructure.TIM_OCNPolarity = TIM_OCNPolarity_High;
     TIM_OCInitStructure.TIM_Pulse = 0;
+    //TIM_OCStructInit(&TIM_OCInitStructure);
 
     TIM_OC1Init(TIM1, &TIM_OCInitStructure);
     TIM_OC1PreloadConfig(TIM1, TIM_OCPreload_Enable);
@@ -99,3 +117,4 @@ int main(void)
     TIM_Cmd(TIM1, ENABLE);
     TIM_CtrlPWMOutputs(TIM1, ENABLE);
 }
+
