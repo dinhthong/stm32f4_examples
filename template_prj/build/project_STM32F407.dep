@@ -1,5 +1,5 @@
 Dependencies for Project 'project', Target 'STM32F407': (DO NOT MODIFY !)
-F (..\user\main.c)(0x5B7832CA)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\MDK-ARM -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\External_Modules -I ..\user-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\ST\STM32F4xx-D__UVISION_VERSION="524" -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DSTM32F40_41xxx-o ..\build\main.o --omf_browse ..\build\main.crf --depend ..\build\main.d)
+F (..\user\main.c)(0x5B8C11D1)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I ..\MDK-ARM -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\External_Modules -I ..\user-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\ST\STM32F4xx-D__UVISION_VERSION="524" -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DSTM32F40_41xxx-o ..\build\main.o --omf_browse ..\build\main.crf --depend ..\build\main.d)
 I (..\user\stm32f4xx.h)(0x527C27FA)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cm4.h)(0x5AD33CF0)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B9154)
