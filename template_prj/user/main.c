@@ -39,9 +39,9 @@ int main(void)
     while (1) {
 		printf("Hello worlddd %d \r\n", count);
 		count+=5;
-		delay_01ms(100);
+		delay_01ms(1000);
     GPIO_SetBits(GPIOD,GPIO_Pin_12|GPIO_Pin_13|GPIO_Pin_14|GPIO_Pin_15);
-		delay_01ms(100);
+		delay_01ms(1000);
 		GPIO_ResetBits(GPIOD,GPIO_Pin_12|GPIO_Pin_13|GPIO_Pin_14|GPIO_Pin_15);
     }
 }

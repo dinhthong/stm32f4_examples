@@ -34,7 +34,7 @@ Set IIC GPIO mode. Input or Output GPIO.
 // set bits GPIOB->MODER7[1:0] = GPIOB->MODER[14:15] = 0b01
 #define SDA_OUT() {GPIOC->MODER&=0xFFFF3FFF;GPIOC->MODER|=0x00004000;}
 
-#define IIC_SCL    PCout(9) //SCL
+#define IIC_SCL    PCout(6) //SCL
 #define IIC_SDA    PCout(7) //SDA	 
 #define READ_SDA   PCin(7)  //read SDA 
 
