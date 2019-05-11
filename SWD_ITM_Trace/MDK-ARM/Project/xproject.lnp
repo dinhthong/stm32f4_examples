@@ -3,6 +3,7 @@
 ".\project\stm32f4xx_it.o"
 ".\project\system_stm32f4xx.o"
 ".\project\retarget.o"
+".\project\startup_stm32f40_41xxx.o"
 ".\project\misc.o"
 ".\project\stm32f4xx_adc.o"
 ".\project\stm32f4xx_can.o"
@@ -34,7 +35,6 @@
 ".\project\stm32f4xx_tim.o"
 ".\project\stm32f4xx_usart.o"
 ".\project\stm32f4xx_wwdg.o"
-".\project\startup_stm32f40_41xxx.o"
---ro-base 0x08000000 --entry 0x08000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--ro-base 0x08000000 --entry 0x08000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list ".\Project\xproject.map" -o .\Project\xproject.axf

@@ -3,42 +3,180 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Tool Versions:</h2>
-IDE-Version: µVision V5.24.2.0
-Copyright (C) 2017 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: thong nguyen, Ho Chi Minh University Of Technology, LIC=LSNVE-5NMZB-KN1AC-7X83U-Z7PGA-VMRDZ
+IDE-Version: µVision V5.22.0.0
+Copyright (C) 2016 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: thong dinh, ampere, LIC=1WS63-ATG2D-UK9B6-D135L-Y2SWJ-PKL63
  
 Tool Versions:
-Toolchain:       MDK-ARM Plus  Version: 5.24.1
+Toolchain:       MDK-ARM Professional  Version: 5.22
 Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
-C Compiler:      Armcc.exe V5.06 update 5 (build 528)
-Assembler:       Armasm.exe V5.06 update 5 (build 528)
-Linker/Locator:  ArmLink.exe V5.06 update 5 (build 528)
-Library Manager: ArmAr.exe V5.06 update 5 (build 528)
-Hex Converter:   FromElf.exe V5.06 update 5 (build 528)
-CPU DLL:         SARMCM3.DLL V5.24.1
-Dialog DLL:      DCM.DLL V1.16.0.0
-Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.1.0
-Dialog DLL:      TCM.DLL V1.32.0.0
+C Compiler:      Armcc.exe V5.06 update 4 (build 422)
+Assembler:       Armasm.exe V5.06 update 4 (build 422)
+Linker/Locator:  ArmLink.exe V5.06 update 4 (build 422)
+Library Manager: ArmAr.exe V5.06 update 4 (build 422)
+Hex Converter:   FromElf.exe V5.06 update 4 (build 422)
+CPU DLL:         SARMCM3.DLL V5.22
+Dialog DLL:      DCM.DLL V1.13.9.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V2.0.18.0
+Dialog DLL:      TCM.DLL V1.21.0.0
  
 <h2>Project:</h2>
-G:\myDesktop\stm ARM\Libraries\test_ESC\MDK-ARM\project.uvproj
-Project File Date:  04/15/2018
+C:\Users\Admin\Desktop\stm32f4-master\SWD_ITM_Trace\MDK-ARM\project.uvproj
+Project File Date:  05/11/2019
 
 <h2>Output:</h2>
-*** Using Compiler 'V5.06 update 5 (build 528)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+*** Using Compiler 'V5.06 update 4 (build 422)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'STM32F407'
 compiling main.c...
-..\stm32f4xx.h(99): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx" 
+..\user\stm32f4xx.h(99): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx" 
   #define STM32F40_41xxx
-..\main.c(53): warning:  #223-D: function "printf" declared implicitly
-  	printf("Hello this is the start of trace\r\n");
-..\main.c: 2 warnings, 0 errors
+..\user\main.c(34): warning:  #223-D: function "printf" declared implicitly
+      printf("Hello this is the start of trace\r\n");
+..\user\main.c: 2 warnings, 0 errors
+compiling stm32f4xx_it.c...
+..\user\stm32f4xx.h(99): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx" 
+  #define STM32F40_41xxx
+..\user\stm32f4xx_it.c: 1 warning, 0 errors
+compiling system_stm32f4xx.c...
+..\user\stm32f4xx.h(99): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx" 
+  #define STM32F40_41xxx
+..\user\system_stm32f4xx.c: 1 warning, 0 errors
+compiling Retarget.c...
+..\user\stm32f4xx.h(99): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx" 
+  #define STM32F40_41xxx
+..\user\Retarget.c(22): warning:  #1-D: last line of file ends without a newline
+  }
+..\user\Retarget.c: 2 warnings, 0 errors
+compiling misc.c...
+..\user\stm32f4xx.h(99): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx" 
+  #define STM32F40_41xxx
+..\..\template_prj\STM32F4xx_StdPeriph_Driver\src\misc.c: 1 warning, 0 errors
+compiling stm32f4xx_adc.c...
+..\user\stm32f4xx.h(99): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx" 
+  #define STM32F40_41xxx
+..\..\template_prj\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_adc.c: 1 warning, 0 errors
+compiling stm32f4xx_crc.c...
+..\user\stm32f4xx.h(99): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx" 
+  #define STM32F40_41xxx
+..\..\template_prj\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_crc.c: 1 warning, 0 errors
+compiling stm32f4xx_cryp.c...
+..\user\stm32f4xx.h(99): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx" 
+  #define STM32F40_41xxx
+..\..\template_prj\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_cryp.c: 1 warning, 0 errors
+compiling stm32f4xx_can.c...
+..\user\stm32f4xx.h(99): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx" 
+  #define STM32F40_41xxx
+..\..\template_prj\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_can.c: 1 warning, 0 errors
+compiling stm32f4xx_cryp_des.c...
+..\user\stm32f4xx.h(99): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx" 
+  #define STM32F40_41xxx
+..\..\template_prj\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_cryp_des.c: 1 warning, 0 errors
+compiling stm32f4xx_cryp_tdes.c...
+..\user\stm32f4xx.h(99): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx" 
+  #define STM32F40_41xxx
+..\..\template_prj\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_cryp_tdes.c: 1 warning, 0 errors
+compiling stm32f4xx_cryp_aes.c...
+..\user\stm32f4xx.h(99): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx" 
+  #define STM32F40_41xxx
+..\..\template_prj\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_cryp_aes.c: 1 warning, 0 errors
+compiling stm32f4xx_dac.c...
+..\user\stm32f4xx.h(99): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx" 
+  #define STM32F40_41xxx
+..\..\template_prj\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dac.c: 1 warning, 0 errors
+compiling stm32f4xx_dbgmcu.c...
+..\user\stm32f4xx.h(99): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx" 
+  #define STM32F40_41xxx
+..\..\template_prj\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dbgmcu.c: 1 warning, 0 errors
+compiling stm32f4xx_dcmi.c...
+..\user\stm32f4xx.h(99): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx" 
+  #define STM32F40_41xxx
+..\..\template_prj\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dcmi.c: 1 warning, 0 errors
+compiling stm32f4xx_exti.c...
+..\user\stm32f4xx.h(99): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx" 
+  #define STM32F40_41xxx
+..\..\template_prj\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_exti.c: 1 warning, 0 errors
+compiling stm32f4xx_dma.c...
+..\user\stm32f4xx.h(99): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx" 
+  #define STM32F40_41xxx
+..\..\template_prj\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.c: 1 warning, 0 errors
+compiling stm32f4xx_flash.c...
+..\user\stm32f4xx.h(99): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx" 
+  #define STM32F40_41xxx
+..\..\template_prj\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_flash.c: 1 warning, 0 errors
+compiling stm32f4xx_gpio.c...
+..\user\stm32f4xx.h(99): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx" 
+  #define STM32F40_41xxx
+..\..\template_prj\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.c: 1 warning, 0 errors
+compiling stm32f4xx_fsmc.c...
+..\user\stm32f4xx.h(99): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx" 
+  #define STM32F40_41xxx
+..\..\template_prj\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_fsmc.c: 1 warning, 0 errors
+compiling stm32f4xx_hash.c...
+..\user\stm32f4xx.h(99): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx" 
+  #define STM32F40_41xxx
+..\..\template_prj\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_hash.c: 1 warning, 0 errors
+compiling stm32f4xx_hash_md5.c...
+..\user\stm32f4xx.h(99): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx" 
+  #define STM32F40_41xxx
+..\..\template_prj\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_hash_md5.c: 1 warning, 0 errors
+compiling stm32f4xx_hash_sha1.c...
+..\user\stm32f4xx.h(99): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx" 
+  #define STM32F40_41xxx
+..\..\template_prj\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_hash_sha1.c: 1 warning, 0 errors
+compiling stm32f4xx_i2c.c...
+..\user\stm32f4xx.h(99): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx" 
+  #define STM32F40_41xxx
+..\..\template_prj\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_i2c.c: 1 warning, 0 errors
+compiling stm32f4xx_iwdg.c...
+..\user\stm32f4xx.h(99): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx" 
+  #define STM32F40_41xxx
+..\..\template_prj\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_iwdg.c: 1 warning, 0 errors
+compiling stm32f4xx_pwr.c...
+..\user\stm32f4xx.h(99): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx" 
+  #define STM32F40_41xxx
+..\..\template_prj\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_pwr.c: 1 warning, 0 errors
+compiling stm32f4xx_rcc.c...
+..\user\stm32f4xx.h(99): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx" 
+  #define STM32F40_41xxx
+..\..\template_prj\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.c: 1 warning, 0 errors
+compiling stm32f4xx_rng.c...
+..\user\stm32f4xx.h(99): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx" 
+  #define STM32F40_41xxx
+..\..\template_prj\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rng.c: 1 warning, 0 errors
+compiling stm32f4xx_sdio.c...
+..\user\stm32f4xx.h(99): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx" 
+  #define STM32F40_41xxx
+..\..\template_prj\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_sdio.c: 1 warning, 0 errors
+compiling stm32f4xx_rtc.c...
+..\user\stm32f4xx.h(99): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx" 
+  #define STM32F40_41xxx
+..\..\template_prj\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rtc.c: 1 warning, 0 errors
+compiling stm32f4xx_spi.c...
+..\user\stm32f4xx.h(99): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx" 
+  #define STM32F40_41xxx
+..\..\template_prj\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.c: 1 warning, 0 errors
+compiling stm32f4xx_syscfg.c...
+..\user\stm32f4xx.h(99): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx" 
+  #define STM32F40_41xxx
+..\..\template_prj\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_syscfg.c: 1 warning, 0 errors
+compiling stm32f4xx_tim.c...
+..\user\stm32f4xx.h(99): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx" 
+  #define STM32F40_41xxx
+..\..\template_prj\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_tim.c: 1 warning, 0 errors
+compiling stm32f4xx_usart.c...
+..\user\stm32f4xx.h(99): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx" 
+  #define STM32F40_41xxx
+..\..\template_prj\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_usart.c: 1 warning, 0 errors
+compiling stm32f4xx_wwdg.c...
+..\user\stm32f4xx.h(99): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx" 
+  #define STM32F40_41xxx
+..\..\template_prj\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_wwdg.c: 1 warning, 0 errors
 linking...
-Program Size: Code=7712 RO-data=424 RW-data=68 ZI-data=1668  
+Program Size: Code=7588 RO-data=424 RW-data=68 ZI-data=1668  
 FromELF: creating hex file...
 After Build - User command #1: C:\Keil_v5\ARM\ARMCC\bin\fromelf.exe --bincombined --output=xproject.bin .\Project\xproject.axf
-".\Project\xproject.axf" - 0 Error(s), 2 Warning(s).
-Build Time Elapsed:  00:00:04
+".\Project\xproject.axf" - 0 Error(s), 37 Warning(s).
+Build Time Elapsed:  00:00:21
 </pre>
 </body>
 </html>
