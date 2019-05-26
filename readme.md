@@ -14,3 +14,8 @@ In uVision. Click `'Options for Target'` -> `C/C++` -> `Include Paths`.
 + STM32-Discovery_FW_V1.10/Project
 + STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project
 + STM32Cube_FW_F4_V1.16.0
+
+# Todos
++ [] Merging all my small ARM-Cortex based MCU projects
++ [] Different IDE (e.g IAR, Eclipe, TrueStudio,...), and different libraries (libopencm3)
++ [] Detail tutorials

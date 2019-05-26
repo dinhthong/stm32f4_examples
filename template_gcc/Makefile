@@ -1,3 +1,5 @@
+# Makefile created by dinhthong
+
 PROJECT_NAME=template
 BUILDDIR = build
 # from STM32F4xx_DSP_StdPeriph_Lib_V1.8.0\Libraries\CMSIS\Device\ST\STM32F4xx\Include
@@ -51,8 +53,10 @@ CFLAGS  = -O0 -g -Wall -I.\
 CFLAGS+= -DSTM32F40_41xxx
 CFLAGS+= -DHSE_VALUE=8000000
 LDSCRIPT = stm32_flash.ld
-LDFLAGS += -T$(LDSCRIPT) -mthumb -mcpu=cortex-m4 -nostdlib
-
+#LDFLAGS += -T$(LDSCRIPT) -mthumb -mcpu=cortex-m4 -nostdlib
+#Support creating .map file after linking
+#https://gcc.gnu.org/onlinedocs/gcc/Link-Options.html
+LDFLAGS += -T$(LDSCRIPT) -mthumb -mcpu=cortex-m4 -nostdlib -Wl,-Map,$(BUILDDIR)/$(PROJECT_NAME).map
 .PHONY: clean all debug flash
 
 $(BIN): $(ELF)

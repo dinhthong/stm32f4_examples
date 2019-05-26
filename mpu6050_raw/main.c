@@ -1,14 +1,12 @@
 #include "stm32f4xx.h"
 #include "MPU6050.h"
-#include "HMC5883L.h"
+//#include "HMC5883L.h"
 /*	      MASTER                    
-	 PB8 --- I2C1_SCL              
-	 PB9 --- I2C1_SDA              
+	 PB6 --- I2C1_SCL              
+	 PB7 --- I2C1_SDA              
 */
 int16_t MPU6050data[7]; 
-int16_t HMC5883Ldata[3]; 
-
-
+//int16_t HMC5883Ldata[3]; 
 void I2C_Configuration(void);
 void Delay(__IO uint32_t nCount);
 
@@ -18,7 +16,7 @@ int main(void)
   MPU6050_Initialize();
   while (1)
   {
-     MPU6050_GetRawAccelTempGyro(MPU6050data);
+    MPU6050_GetRawAccelTempGyro(MPU6050data);
 		Delay(240);
   }
 }
@@ -46,8 +44,8 @@ void I2C_Configuration(void)
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;  
   GPIO_Init(GPIOB, &GPIO_InitStructure);
 	
-  GPIO_PinAFConfig(GPIOB,GPIO_PinSource6,GPIO_AF_I2C1);
-  GPIO_PinAFConfig(GPIOB,GPIO_PinSource7,GPIO_AF_I2C1);	
+  GPIO_PinAFConfig(GPIOB, GPIO_PinSource6, GPIO_AF_I2C1);
+  GPIO_PinAFConfig(GPIOB, GPIO_PinSource7, GPIO_AF_I2C1);	
 
   /* I2C De-initialize */
   I2C_DeInit(I2C1);
@@ -61,9 +59,7 @@ void I2C_Configuration(void)
  /* I2C ENABLE */
   I2C_Cmd(I2C1, ENABLE); 
   /* Enable Interrupt */
-
 }
-
 
 void Delay(__IO uint32_t nCount)
 {
