@@ -1,6 +1,7 @@
 My STM32 projects codehub.
 # Brief
-ARM Cortex M4
++ ARM Cortex M4.
++ STM Standard Library V1.0.2
 # Note
 ## Example project
 ### Keil IDE
@@ -19,3 +20,4 @@ In uVision. Click `'Options for Target'` -> `C/C++` -> `Include Paths`.
 + [] Merging all my small ARM-Cortex based MCU projects
 + [] Different IDE (e.g IAR, Eclipe, TrueStudio,...), and different libraries (libopencm3)
 + [] Detail tutorials
++ [] SDIO, FSMC, USB mouse and keyboard, ARM Cortex M4 exception generation and handling, TFT LCD SPI, EEPROM
