@@ -1,5 +1,7 @@
 #include "stm32f4xx.h"
 #include "stm32f4xx_it.h"
+//#define NORMAL
+
 /*
 Sample delay functions.
 */
@@ -51,11 +53,24 @@ int main(void)
   GPIO_Init(GPIOD, &GPIO_InitStructure);
   while (1)
   {
+	  #ifdef NORMAL
 		delay_01ms(10000);
         // GPIO_SetBits(GPIOD,GPIO_Pin_12|GPIO_Pin_13|GPIO_Pin_14|GPIO_Pin_15);
 		GPIOD->BSRRL = GPIO_Pin_12|GPIO_Pin_13|GPIO_Pin_14|GPIO_Pin_15;
 		delay_01ms(10000);
 		//GPIO_ResetBits(GPIOD,GPIO_Pin_12|GPIO_Pin_13|GPIO_Pin_14|GPIO_Pin_15);
 		GPIOD->BSRRH = GPIO_Pin_12|GPIO_Pin_13|GPIO_Pin_14|GPIO_Pin_15;
+	#else
+			delay_01ms(5000);
+		// address for GPIOD.BSRRL = x + GPIOD_BASE  = BSRR_offset + AHB1PERIPH_BASE + 0x0C00 = BSRR_offset + 0x4000 0000 + 0x0002 0000 + 0x0C00
+		// with BSRR_offset = 0x18
+		// Low bits <-> Port x set bit y.
+//			*(uint32_t *)Address = GPIO_Pin_12|GPIO_Pin_13|GPIO_Pin_14|GPIO_Pin_15;
+		*(uint32_t *)0x40020C18 = GPIO_Pin_12|GPIO_Pin_13|GPIO_Pin_14|GPIO_Pin_15;
+		delay_01ms(5000);
+		uint32_t Address = 0x40020C00 + 0x18;
+		//GPIO_ResetBits(GPIOD,GPIO_Pin_12|GPIO_Pin_13|GPIO_Pin_14|GPIO_Pin_15);
+		*(uint32_t *)Address = (GPIO_Pin_12|GPIO_Pin_13|GPIO_Pin_14|GPIO_Pin_15)<<16;
+	#endif
   }
 }

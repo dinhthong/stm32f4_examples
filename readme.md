@@ -3,7 +3,7 @@ My STM32 projects codehub.
 + ARM Cortex M4.
 + STM Standard Library V1.0.2
 # Note
-## Example project
+## Example template project
 ### Keil IDE
 `template_keilc` is a pre-configured project using Keil uVision IDE.
 To run the project. You have to correctly set the Include Paths to the folder contains files used in the project.  
@@ -15,9 +15,14 @@ In uVision. Click `'Options for Target'` -> `C/C++` -> `Include Paths`.
 + STM32-Discovery_FW_V1.10/Project
 + STM32F4xx_DSP_StdPeriph_Lib_V1.3.0/Project
 + STM32Cube_FW_F4_V1.16.0
-
++ ARM CMSIS DSP library and its examples. `STM32F4xx_DSP_StdPeriph_Lib_V1.8.0\Libraries\CMSIS\DSP_Lib\Source`
++ STM32_USB-Host-Device_Lib_V2.2.0
+## Keywords
++ CMSIS RTOS
 # Todos
++ [] Clean up/refactor the code (for e.g stm32f4xx.h files in all directories)
 + [] Merging all my small ARM-Cortex based MCU projects
 + [] Different IDE (e.g IAR, Eclipe, TrueStudio,...), and different libraries (libopencm3)
 + [] Detail tutorials
 + [] SDIO, FSMC, USB mouse and keyboard, ARM Cortex M4 exception generation and handling, TFT LCD SPI, EEPROM
++ [] ARM DSP and math functions
