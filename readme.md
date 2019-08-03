@@ -21,8 +21,9 @@ In uVision. Click `'Options for Target'` -> `C/C++` -> `Include Paths`.
 ### Other example projects
 + https://github.com/mfauzi/STM32F4/tree/master/STM32F4%20Discovery%20Software%20Examples
 ## Keywords
-+ CMSIS RTOS
-+ ST STM32F4xx Application Notes
++ CMSIS RTOS.
++ ST STM32F4xx Application Notes.
++ ARM Math library - DSP (Digital Signal Processing).
 # Todos
 + [] Clean up/refactor the code (for e.g stm32f4xx.h files in all directories)
 + [] Merging all my small ARM-Cortex based MCU projects
