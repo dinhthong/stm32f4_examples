@@ -13,7 +13,6 @@ void Delay(int t){
 }
 
 void delay_us(uint32_t period){
-	
   	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
   	TIM2->PSC = 83;		// clk = SystemCoreClock /2/(PSC+1) = 1MHz
   	TIM2->ARR = period-1;
@@ -43,24 +42,23 @@ char RxBuffer[BUFFERSIZE];
 __IO uint8_t RxIndex = 0x00;
 int main(void)
 {
-  GPIO_InitTypeDef  GPIO_InitStructure;
-	
-  /* GPIOD Peripheral clock enable */
- // RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE);
-  RCC->AHB1ENR |= RCC_AHB1Periph_GPIOD;
-  /* Configure PD12, PD13 in output pushpull mode */
-  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_12|GPIO_Pin_13|GPIO_Pin_14|GPIO_Pin_15 ;
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
-  GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
-  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
-  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
-  GPIO_Init(GPIOD, &GPIO_InitStructure);
+  	GPIO_InitTypeDef  GPIO_InitStructure;
+  	/* GPIOD Peripheral clock enable */
+ 	// RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE);
+	RCC->AHB1ENR |= RCC_AHB1Periph_GPIOD;
+	/* Configure PD12, PD13 in output pushpull mode */
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_12|GPIO_Pin_13|GPIO_Pin_14|GPIO_Pin_15 ;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
+	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
+	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
+	GPIO_Init(GPIOD, &GPIO_InitStructure);
 	UARTmain_Init();
   while (1)
   {
 		delay_01ms(5000);
 		printf("Hello world\r\n");
-   // GPIO_SetBits(GPIOD,GPIO_Pin_12|GPIO_Pin_13|GPIO_Pin_14|GPIO_Pin_15);
+   		// GPIO_SetBits(GPIOD,GPIO_Pin_12|GPIO_Pin_13|GPIO_Pin_14|GPIO_Pin_15);
 		GPIOD->BSRRL = GPIO_Pin_12|GPIO_Pin_13|GPIO_Pin_14|GPIO_Pin_15;
 		delay_01ms(5000);
 		//GPIO_ResetBits(GPIOD,GPIO_Pin_12|GPIO_Pin_13|GPIO_Pin_14|GPIO_Pin_15);
@@ -70,11 +68,11 @@ int main(void)
 //2 ways
 void UARTmain_Init()
 {
-		GPIO_InitTypeDef GPIO_InitStruct;
+	GPIO_InitTypeDef GPIO_InitStruct;
     USART_InitTypeDef USART_InitStruct;
-	  NVIC_InitTypeDef NVIC_InitStructure;
+	NVIC_InitTypeDef NVIC_InitStructure;
 	
-	  RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART2, ENABLE);
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART2, ENABLE);
     RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE);
 	
     GPIO_InitStruct.GPIO_Mode=GPIO_Mode_AF;
@@ -84,7 +82,7 @@ void UARTmain_Init()
     GPIO_InitStruct.GPIO_PuPd=GPIO_PuPd_UP;
     GPIO_Init(GPIOD, &GPIO_InitStruct);
 	
-	  /*PD5 to PL2303 RX*/
+	/*PD5 to PL2303 RX*/
     GPIO_PinAFConfig(GPIOD, GPIO_PinSource5, GPIO_AF_USART2);//UART Tx pins 
     GPIO_PinAFConfig(GPIOD, GPIO_PinSource6, GPIO_AF_USART2);//UART Rx pins
 	
@@ -97,29 +95,27 @@ void UARTmain_Init()
     USART_InitStruct.USART_WordLength=USART_WordLength_8b;
     USART_Init(USART2, &USART_InitStruct);
 		
-		NVIC_InitStructure.NVIC_IRQChannel = USART2_IRQn;
-		NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
-		NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
-		NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
-		NVIC_Init(&NVIC_InitStructure);
-		USART_ITConfig(USART2, USART_IT_RXNE, ENABLE);
-		USART_Cmd(USART2, ENABLE);  
+	NVIC_InitStructure.NVIC_IRQChannel = USART2_IRQn;
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
+	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+	NVIC_Init(&NVIC_InitStructure);
+	USART_ITConfig(USART2, USART_IT_RXNE, ENABLE);
+	USART_Cmd(USART2, ENABLE);  
 }
 void USART2_IRQHandler(void)
 {
-		// Transfer interrupt
-    if (USART_GetITStatus(USART2, USART_IT_TXE) != RESET) 
-        {
-        }
+	// Transfer interrupt
+    if (USART_GetITStatus(USART2, USART_IT_TXE) != RESET) {
+    }
     // Receive interrupt
-    if (USART_GetITStatus(USART2, USART_IT_RXNE) != RESET) 
-        {
+    if (USART_GetITStatus(USART2, USART_IT_RXNE) != RESET) {
     //read from USART_DR will automatically clear the RNXE bit.
-	  if (RxIndex >= BUFFERSIZE)
+	if (RxIndex >= BUFFERSIZE)
     {
 			RxIndex=0;
     /* Receive Transaction data */
     }
 		RxBuffer[RxIndex++] = USART_ReceiveData(USART2);
-				}
+	}
 }
