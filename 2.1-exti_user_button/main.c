@@ -1,6 +1,6 @@
 /*
 Press the User Button to toggle the LED's state.
-We need button debouncing handler (software or hardware) to prevent unexpected behavior of the Button.
+To improve: We need button debouncing handler (software or hardware) to prevent unexpected behavior when using the physical button.
 */
 #include "stm32f4xx.h"
 void GPIO_Config(void);

@@ -1,4 +1,8 @@
-#   MAIN              
+#   MAIN
+show_help() 
+{
+	echo "This is placeholder for help"
+}              
 if [ $# != 0 ]; then
 	case $1 in
 		"template" )
@@ -9,10 +13,10 @@ if [ $# != 0 ]; then
 			;;
 		*)
 			echo "=== $1 === : Build option is not supported. Please choose another one!"
-			#build_help
+			show_help
 			;;
 	esac
 else
-	#build_help
 	echo "No argument were provided!"
+	show_help
 fi
