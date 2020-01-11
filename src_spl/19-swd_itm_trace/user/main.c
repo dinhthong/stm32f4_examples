@@ -29,25 +29,15 @@ int main(void)
     GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
     GPIO_Init(GPIOD, &GPIO_InitStructure);
 	  PWM_Config();
-    //"on the fly" update CCR registers. -> use for quadcopter
-    //This is sent to initialize the motors
-    printf("Hello this is the start of trace\r\n");
-//    TIM1->CCR1 = 1000;
-//    TIM1->CCR2 = 1000;
-//    TIM1->CCR3 = 1000;
-//    TIM1->CCR4 = 1000;
-    delay_01ms(50000);
+    printf("Hello this is the start of ITM example\r\n");
+  
     while(1) {
         if (S<1700) {
 		    S+=50;
-		    delay_01ms(50000);
+		    delay_01ms(20000);
 		    printf("Hello this is tracing %d\r\n",S);
 		    GPIO_ToggleBits(GPIOD,GPIO_Pin_12|GPIO_Pin_13|GPIO_Pin_14|GPIO_Pin_15);
 	    }
-//	    TIM1->CCR1 = S;
-//	    TIM1->CCR2 = S;
-//	    TIM1->CCR3 = S;
-//        TIM1->CCR4 = S;
 	}
 }
 

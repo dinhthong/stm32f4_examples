@@ -2,3 +2,5 @@
 **/build
 #for MDK-ARM IDE generated user files 
 *.uvgui*
+*.o*
+*.d*
