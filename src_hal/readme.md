@@ -9,8 +9,10 @@
 # note
 These notes are re-transcripted from My own notes from PPT file
 ## UART
+
 mới vào trong hàm main phải có dòng lệnh nói uart nào đó nhận dữ liệu HAL_UART_Receive_IT(&huart3, &get, 1) : cho phép nhận dữ liệu thông qua ngắt chỉ 1 lần. Nên sau mỗi khi nhận thì phải khai báo lại
 Từ đó trở đi mới xảy ra các sự kiện như 
+```
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
 	if(huart->Instance==huart3.Instance)
@@ -18,6 +20,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 		HAL_UART_Receive_IT(&huart3, &get, 1)
 	}
 }
+```
 Để viết nó nhận dữ liệu tiếp
 ---
 Còn nếu dùng chế độ Receive and Transmit bt?
