@@ -1,0 +1,80 @@
+mkdir -p build/src/
+arm-none-eabi-gcc -c -O0 -g -Wall -I. -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ISTM32F4xx -ICMSIS -ISTM32F4xx_StdPeriph_Driver/inc -Iinc -Iinc/usb/inc -I. -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DHSE_VALUE=8000000 src/startup_stm32f4xx.S -o build/src/startup_stm32f4xx.o
+mkdir -p build/src/
+arm-none-eabi-gcc -c -O0 -g -Wall -I. -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ISTM32F4xx -ICMSIS -ISTM32F4xx_StdPeriph_Driver/inc -Iinc -Iinc/usb/inc -I. -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DHSE_VALUE=8000000 src/main.c -o build/src/main.o
+mkdir -p build/src/
+arm-none-eabi-gcc -c -O0 -g -Wall -I. -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ISTM32F4xx -ICMSIS -ISTM32F4xx_StdPeriph_Driver/inc -Iinc -Iinc/usb/inc -I. -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DHSE_VALUE=8000000 src/stm32f4xx_it.c -o build/src/stm32f4xx_it.o
+mkdir -p build/src/
+arm-none-eabi-gcc -c -O0 -g -Wall -I. -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ISTM32F4xx -ICMSIS -ISTM32F4xx_StdPeriph_Driver/inc -Iinc -Iinc/usb/inc -I. -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DHSE_VALUE=8000000 src/system_stm32f4xx.c -o build/src/system_stm32f4xx.o
+src/system_stm32f4xx.c: In function 'SetSysClock':
+src/system_stm32f4xx.c:562:5: warning: this 'while' clause does not guard... [-Wmisleading-indentation]
+     while ((RCC->CFGR & (uint32_t)RCC_CFGR_SWS ) != RCC_CFGR_SWS_PLL);
+     ^~~~~
+src/system_stm32f4xx.c:563:5: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'while'
+     {
+     ^
+mkdir -p build/STM32F4xx_StdPeriph_Driver/src/
+arm-none-eabi-gcc -c -O0 -g -Wall -I. -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ISTM32F4xx -ICMSIS -ISTM32F4xx_StdPeriph_Driver/inc -Iinc -Iinc/usb/inc -I. -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DHSE_VALUE=8000000 STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c -o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.o
+mkdir -p build/STM32F4xx_StdPeriph_Driver/src/
+arm-none-eabi-gcc -c -O0 -g -Wall -I. -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ISTM32F4xx -ICMSIS -ISTM32F4xx_StdPeriph_Driver/inc -Iinc -Iinc/usb/inc -I. -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DHSE_VALUE=8000000 STM32F4xx_StdPeriph_Driver/src/stm32f4xx_tim.c -o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_tim.o
+mkdir -p build/STM32F4xx_StdPeriph_Driver/src/
+arm-none-eabi-gcc -c -O0 -g -Wall -I. -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ISTM32F4xx -ICMSIS -ISTM32F4xx_StdPeriph_Driver/inc -Iinc -Iinc/usb/inc -I. -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DHSE_VALUE=8000000 STM32F4xx_StdPeriph_Driver/src/stm32f4xx_wwdg.c -o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_wwdg.o
+mkdir -p build/STM32F4xx_StdPeriph_Driver/src/
+arm-none-eabi-gcc -c -O0 -g -Wall -I. -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ISTM32F4xx -ICMSIS -ISTM32F4xx_StdPeriph_Driver/inc -Iinc -Iinc/usb/inc -I. -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DHSE_VALUE=8000000 STM32F4xx_StdPeriph_Driver/src/stm32f4xx_hash_sha1.c -o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_hash_sha1.o
+mkdir -p build/STM32F4xx_StdPeriph_Driver/src/
+arm-none-eabi-gcc -c -O0 -g -Wall -I. -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ISTM32F4xx -ICMSIS -ISTM32F4xx_StdPeriph_Driver/inc -Iinc -Iinc/usb/inc -I. -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DHSE_VALUE=8000000 STM32F4xx_StdPeriph_Driver/src/stm32f4xx_exti.c -o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_exti.o
+mkdir -p build/STM32F4xx_StdPeriph_Driver/src/
+arm-none-eabi-gcc -c -O0 -g -Wall -I. -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ISTM32F4xx -ICMSIS -ISTM32F4xx_StdPeriph_Driver/inc -Iinc -Iinc/usb/inc -I. -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DHSE_VALUE=8000000 STM32F4xx_StdPeriph_Driver/src/stm32f4xx_fsmc.c -o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_fsmc.o
+mkdir -p build/STM32F4xx_StdPeriph_Driver/src/
+arm-none-eabi-gcc -c -O0 -g -Wall -I. -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ISTM32F4xx -ICMSIS -ISTM32F4xx_StdPeriph_Driver/inc -Iinc -Iinc/usb/inc -I. -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DHSE_VALUE=8000000 STM32F4xx_StdPeriph_Driver/src/stm32f4xx_cryp_tdes.c -o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_cryp_tdes.o
+mkdir -p build/STM32F4xx_StdPeriph_Driver/src/
+arm-none-eabi-gcc -c -O0 -g -Wall -I. -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ISTM32F4xx -ICMSIS -ISTM32F4xx_StdPeriph_Driver/inc -Iinc -Iinc/usb/inc -I. -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DHSE_VALUE=8000000 STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dma.c -o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dma.o
+mkdir -p build/STM32F4xx_StdPeriph_Driver/src/
+arm-none-eabi-gcc -c -O0 -g -Wall -I. -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ISTM32F4xx -ICMSIS -ISTM32F4xx_StdPeriph_Driver/inc -Iinc -Iinc/usb/inc -I. -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DHSE_VALUE=8000000 STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dbgmcu.c -o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dbgmcu.o
+mkdir -p build/STM32F4xx_StdPeriph_Driver/src/
+arm-none-eabi-gcc -c -O0 -g -Wall -I. -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ISTM32F4xx -ICMSIS -ISTM32F4xx_StdPeriph_Driver/inc -Iinc -Iinc/usb/inc -I. -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DHSE_VALUE=8000000 STM32F4xx_StdPeriph_Driver/src/stm32f4xx_hash.c -o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_hash.o
+mkdir -p build/STM32F4xx_StdPeriph_Driver/src/
+arm-none-eabi-gcc -c -O0 -g -Wall -I. -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ISTM32F4xx -ICMSIS -ISTM32F4xx_StdPeriph_Driver/inc -Iinc -Iinc/usb/inc -I. -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DHSE_VALUE=8000000 STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dac.c -o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dac.o
+mkdir -p build/STM32F4xx_StdPeriph_Driver/src/
+arm-none-eabi-gcc -c -O0 -g -Wall -I. -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ISTM32F4xx -ICMSIS -ISTM32F4xx_StdPeriph_Driver/inc -Iinc -Iinc/usb/inc -I. -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DHSE_VALUE=8000000 STM32F4xx_StdPeriph_Driver/src/stm32f4xx_can.c -o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_can.o
+mkdir -p build/STM32F4xx_StdPeriph_Driver/src/
+arm-none-eabi-gcc -c -O0 -g -Wall -I. -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ISTM32F4xx -ICMSIS -ISTM32F4xx_StdPeriph_Driver/inc -Iinc -Iinc/usb/inc -I. -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DHSE_VALUE=8000000 STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rtc.c -o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rtc.o
+mkdir -p build/STM32F4xx_StdPeriph_Driver/src/
+arm-none-eabi-gcc -c -O0 -g -Wall -I. -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ISTM32F4xx -ICMSIS -ISTM32F4xx_StdPeriph_Driver/inc -Iinc -Iinc/usb/inc -I. -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DHSE_VALUE=8000000 STM32F4xx_StdPeriph_Driver/src/stm32f4xx_pwr.c -o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_pwr.o
+mkdir -p build/STM32F4xx_StdPeriph_Driver/src/
+arm-none-eabi-gcc -c -O0 -g -Wall -I. -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ISTM32F4xx -ICMSIS -ISTM32F4xx_StdPeriph_Driver/inc -Iinc -Iinc/usb/inc -I. -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DHSE_VALUE=8000000 STM32F4xx_StdPeriph_Driver/src/stm32f4xx_i2c.c -o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_i2c.o
+mkdir -p build/STM32F4xx_StdPeriph_Driver/src/
+arm-none-eabi-gcc -c -O0 -g -Wall -I. -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ISTM32F4xx -ICMSIS -ISTM32F4xx_StdPeriph_Driver/inc -Iinc -Iinc/usb/inc -I. -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DHSE_VALUE=8000000 STM32F4xx_StdPeriph_Driver/src/stm32f4xx_hash_md5.c -o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_hash_md5.o
+mkdir -p build/STM32F4xx_StdPeriph_Driver/src/
+arm-none-eabi-gcc -c -O0 -g -Wall -I. -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ISTM32F4xx -ICMSIS -ISTM32F4xx_StdPeriph_Driver/inc -Iinc -Iinc/usb/inc -I. -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DHSE_VALUE=8000000 STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rcc.c -o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rcc.o
+mkdir -p build/STM32F4xx_StdPeriph_Driver/src/
+arm-none-eabi-gcc -c -O0 -g -Wall -I. -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ISTM32F4xx -ICMSIS -ISTM32F4xx_StdPeriph_Driver/inc -Iinc -Iinc/usb/inc -I. -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DHSE_VALUE=8000000 STM32F4xx_StdPeriph_Driver/src/stm32f4xx_flash.c -o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_flash.o
+mkdir -p build/STM32F4xx_StdPeriph_Driver/src/
+arm-none-eabi-gcc -c -O0 -g -Wall -I. -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ISTM32F4xx -ICMSIS -ISTM32F4xx_StdPeriph_Driver/inc -Iinc -Iinc/usb/inc -I. -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DHSE_VALUE=8000000 STM32F4xx_StdPeriph_Driver/src/misc.c -o build/STM32F4xx_StdPeriph_Driver/src/misc.o
+mkdir -p build/STM32F4xx_StdPeriph_Driver/src/
+arm-none-eabi-gcc -c -O0 -g -Wall -I. -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ISTM32F4xx -ICMSIS -ISTM32F4xx_StdPeriph_Driver/inc -Iinc -Iinc/usb/inc -I. -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DHSE_VALUE=8000000 STM32F4xx_StdPeriph_Driver/src/stm32f4xx_sdio.c -o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_sdio.o
+mkdir -p build/STM32F4xx_StdPeriph_Driver/src/
+arm-none-eabi-gcc -c -O0 -g -Wall -I. -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ISTM32F4xx -ICMSIS -ISTM32F4xx_StdPeriph_Driver/inc -Iinc -Iinc/usb/inc -I. -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DHSE_VALUE=8000000 STM32F4xx_StdPeriph_Driver/src/stm32f4xx_syscfg.c -o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_syscfg.o
+mkdir -p build/STM32F4xx_StdPeriph_Driver/src/
+arm-none-eabi-gcc -c -O0 -g -Wall -I. -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ISTM32F4xx -ICMSIS -ISTM32F4xx_StdPeriph_Driver/inc -Iinc -Iinc/usb/inc -I. -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DHSE_VALUE=8000000 STM32F4xx_StdPeriph_Driver/src/stm32f4xx_cryp_des.c -o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_cryp_des.o
+mkdir -p build/STM32F4xx_StdPeriph_Driver/src/
+arm-none-eabi-gcc -c -O0 -g -Wall -I. -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ISTM32F4xx -ICMSIS -ISTM32F4xx_StdPeriph_Driver/inc -Iinc -Iinc/usb/inc -I. -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DHSE_VALUE=8000000 STM32F4xx_StdPeriph_Driver/src/stm32f4xx_crc.c -o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_crc.o
+mkdir -p build/STM32F4xx_StdPeriph_Driver/src/
+arm-none-eabi-gcc -c -O0 -g -Wall -I. -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ISTM32F4xx -ICMSIS -ISTM32F4xx_StdPeriph_Driver/inc -Iinc -Iinc/usb/inc -I. -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DHSE_VALUE=8000000 STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c -o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.o
+mkdir -p build/STM32F4xx_StdPeriph_Driver/src/
+arm-none-eabi-gcc -c -O0 -g -Wall -I. -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ISTM32F4xx -ICMSIS -ISTM32F4xx_StdPeriph_Driver/inc -Iinc -Iinc/usb/inc -I. -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DHSE_VALUE=8000000 STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dcmi.c -o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dcmi.o
+mkdir -p build/STM32F4xx_StdPeriph_Driver/src/
+arm-none-eabi-gcc -c -O0 -g -Wall -I. -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ISTM32F4xx -ICMSIS -ISTM32F4xx_StdPeriph_Driver/inc -Iinc -Iinc/usb/inc -I. -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DHSE_VALUE=8000000 STM32F4xx_StdPeriph_Driver/src/stm32f4xx_cryp_aes.c -o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_cryp_aes.o
+mkdir -p build/STM32F4xx_StdPeriph_Driver/src/
+arm-none-eabi-gcc -c -O0 -g -Wall -I. -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ISTM32F4xx -ICMSIS -ISTM32F4xx_StdPeriph_Driver/inc -Iinc -Iinc/usb/inc -I. -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DHSE_VALUE=8000000 STM32F4xx_StdPeriph_Driver/src/stm32f4xx_cryp.c -o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_cryp.o
+mkdir -p build/STM32F4xx_StdPeriph_Driver/src/
+arm-none-eabi-gcc -c -O0 -g -Wall -I. -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ISTM32F4xx -ICMSIS -ISTM32F4xx_StdPeriph_Driver/inc -Iinc -Iinc/usb/inc -I. -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DHSE_VALUE=8000000 STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rng.c -o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rng.o
+mkdir -p build/STM32F4xx_StdPeriph_Driver/src/
+arm-none-eabi-gcc -c -O0 -g -Wall -I. -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ISTM32F4xx -ICMSIS -ISTM32F4xx_StdPeriph_Driver/inc -Iinc -Iinc/usb/inc -I. -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DHSE_VALUE=8000000 STM32F4xx_StdPeriph_Driver/src/stm32f4xx_iwdg.c -o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_iwdg.o
+mkdir -p build/STM32F4xx_StdPeriph_Driver/src/
+arm-none-eabi-gcc -c -O0 -g -Wall -I. -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ISTM32F4xx -ICMSIS -ISTM32F4xx_StdPeriph_Driver/inc -Iinc -Iinc/usb/inc -I. -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DHSE_VALUE=8000000 STM32F4xx_StdPeriph_Driver/src/stm32f4xx_adc.c -o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_adc.o
+mkdir -p build/STM32F4xx_StdPeriph_Driver/src/
+arm-none-eabi-gcc -c -O0 -g -Wall -I. -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ISTM32F4xx -ICMSIS -ISTM32F4xx_StdPeriph_Driver/inc -Iinc -Iinc/usb/inc -I. -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DHSE_VALUE=8000000 STM32F4xx_StdPeriph_Driver/src/stm32f4xx_spi.c -o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_spi.o
+arm-none-eabi-gcc -Tstm32_flash.ld -mthumb -mcpu=cortex-m4 -nostdlib -Wl,-Map,build/template.map -o build/template.elf build/src/startup_stm32f4xx.o build/src/main.o build/src/stm32f4xx_it.o build/src/system_stm32f4xx.o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_tim.o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_hash_sha1.o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_hash.o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dac.o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_can.o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_flash.o build/STM32F4xx_StdPeriph_Driver/src/misc.o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dma.o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_cryp_des.o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_cryp_tdes.o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_hash_md5.o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rng.o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_spi.o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_exti.o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_fsmc.o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_wwdg.o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dbgmcu.o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rtc.o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_pwr.o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_i2c.o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_sdio.o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rcc.o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_syscfg.o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_crc.o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dcmi.o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_cryp_aes.o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_cryp.o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_iwdg.o build/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_adc.o 
+arm-none-eabi-objcopy -O ihex build/template.elf build/template.hex
+arm-none-eabi-objcopy -O binary build/template.elf build/template.bin
