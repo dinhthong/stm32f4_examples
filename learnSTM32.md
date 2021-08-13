@@ -1,4 +1,4 @@
-# learn STM32
+# Learn STM32
 Dedicated to guide beginners in progress of learning STM32 discovery board.
 STM32F407VG
 # IDE for programming with STM32.
@@ -7,6 +7,8 @@ The Keil uVision IDE
 http://www2.keil.com/mdk5/uvision/
 
 After downloading and installing the IDE, you can find video tutorials to properly set up the IDE for working with your board. I recommend strictly follow the tutorial to make your first program works. And then understand the why and IDE options later.
+## Tutorial: Create STM32 project, Manage Runtime Environment
+https://www.youtube.com/watch?v=UbpjzloHR-8
 # Libraries and examples.
 
 For programmer who wants to build application fast. ST provides a lot of good libraries along with examples. You won't need to spending time find examples on the Internet. 
@@ -30,7 +32,7 @@ Reference manual explains all the peripherals as well as theirs register, you wi
 # Books
 # Video tutorials
 http://www.st.com/content/st_com/en/support/learning/stm32-education.html
-Others:
+## Others:
 Embedded Systems with ARM Cortex-M Microcontrollers in Assembly Language and C
 https://www.youtube.com/channel/UCY0sQ9hpSR6yZobt1qOv6DA
 
@@ -67,6 +69,7 @@ Along with that you can build your own projects by combining what you've learnt.
 9. GNU and Makefile
 10. Manually porting to lower level programs from higher library. Minimize code density and resources.
 
-#Good articles
-http://blog.atollic.com/the-embedded-developer-is-dead-long-live-the-embedded-developer 
-http://blog.atollic.com/12-great-tools-and-techniques-for-stm32-developers
+# Good articles
+- http://blog.atollic.com/the-embedded-developer-is-dead-long-live-the-embedded-developer 
+- http://blog.atollic.com/12-great-tools-and-techniques-for-stm32-developers
+- Understand how to correctly configure and Build the project and make that project work on my computer: https://stm32f4-discovery.net/2014/05/all-stm32f429-libraries-at-one-place/
