@@ -7,3 +7,9 @@
 *.o*
 *.d*
 *.crf*
+src_hal/usart6_transmit_DMA/MDK-ARM/Uart Echo Data Using DMA/Uart Echo Data Using DMA.sct
+src_hal/usart6_transmit_DMA/MDK-ARM/Uart Echo Data Using DMA/Uart Echo Data Using DMA.map
+src_hal/usart6_transmit_DMA/MDK-ARM/Uart Echo Data Using DMA/Uart Echo Data Using DMA.lnp
+src_hal/usart6_transmit_DMA/MDK-ARM/Uart Echo Data Using DMA/Uart Echo Data Using DMA.htm
+src_hal/usart6_transmit_DMA/MDK-ARM/Uart Echo Data Using DMA/Uart Echo Data Using DMA.build_log.htm
+src_hal/usart6_transmit_DMA/MDK-ARM/Uart Echo Data Using DMA/Uart Echo Data Using DMA.axf
