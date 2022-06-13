@@ -96,7 +96,7 @@
 /*  Tip: To avoid modifying this file each time you need to switch between these
         devices, you can define the device in your toolchain compiler preprocessor.
   */
-#define STM32F40_41xxx
+//#define STM32F40_41xxx
 #if !defined (STM32F40_41xxx) && !defined (STM32F427_437xx) && !defined (STM32F429_439xx) && !defined (STM32F401xx)
  #error "Please select first the target STM32F4xx device used in your application (in stm32f4xx.h file)"
 #endif
